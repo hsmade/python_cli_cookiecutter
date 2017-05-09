@@ -1,0 +1,26 @@
+#!/bin/bash --login
+set -e
+cd $(dirname $0)/../..
+
+. _CI/scripts/bootstrap
+
+rm -rf build dist
+
+# we want all these files to exist in the actual package
+cp .VERSION {{cookiecutter.repo_name}}/.VERSION
+cp LICENSE {{cookiecutter.repo_name}}/LICENSE
+cp AUTHORS.rst {{cookiecutter.repo_name}}/AUTHORS.rst
+cp CONTRIBUTING.rst {{cookiecutter.repo_name}}/CONTRIBUTING.rst
+cp HISTORY.rst {{cookiecutter.repo_name}}/HISTORY.rst
+cp README.rst {{cookiecutter.repo_name}}/README.rst
+cp USAGE.rst {{cookiecutter.repo_name}}/USAGE.rst
+
+python setup.py sdist bdist_egg upload -r pypi
+
+rm {{cookiecutter.repo_name}}/.VERSION
+rm {{cookiecutter.repo_name}}/LICENSE
+rm {{cookiecutter.repo_name}}/AUTHORS.rst
+rm {{cookiecutter.repo_name}}/CONTRIBUTING.rst
+rm {{cookiecutter.repo_name}}/HISTORY.rst
+rm {{cookiecutter.repo_name}}/README.rst
+rm {{cookiecutter.repo_name}}/USAGE.rst

@@ -1,0 +1,15 @@
+{
+  "full_name": "Costas Tyfoxylos", 
+  "email": "costas.tyf@gmail.com", 
+  "repo_name": "pythonlibproject", 
+  "project_short_description": "A template to create python libraries", 
+  "git_url": "https://github.com/whoever/whatever", 
+  "tags": "", 
+  "programming_language": "python", 
+  "package_type": "egg", 
+  "compatibility": "python-2.7", 
+  "release_date": "14-04-2016",
+  "year": "2017", 
+  "license": "Copyright (c) {{ cookiecutter.year }}, ({{ cookiecutter.full_name }}). All rights reserved.", 
+  "foss_license": "MIT"
+}
